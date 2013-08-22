@@ -20,6 +20,8 @@
 	// Do any additional setup after loading the view, typically from a nib.
     
     //TEST KOZAWA
+
+    //Hi, I'm Suzuki!
 }
 
 - (void)didReceiveMemoryWarning
