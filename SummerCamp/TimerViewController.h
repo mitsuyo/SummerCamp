@@ -10,10 +10,18 @@
 
 @interface TimerViewController : UIViewController
 
-// タイマー（分）
-@property (nonatomic, assign) int time;
+// タイマー（秒）
+@property (nonatomic, assign) float time;
 
 // モード（胸ポケ:0,机:1）
 @property (nonatomic, assign) int mode;
+
+// 時間表示ラベル
+@property (weak, nonatomic) IBOutlet UILabel *timeLabel;
+
+// 起きてる！ボタン
+@property (weak, nonatomic) IBOutlet UIButton *wakeButton;
+
+- (IBAction)wakeUp:(id)sender;
 
 @end
