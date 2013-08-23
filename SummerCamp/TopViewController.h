@@ -10,4 +10,13 @@
 
 @interface TopViewController : UIViewController
 
+
+@property (weak, nonatomic) IBOutlet UILabel *timerLabel;
+
+
+- (IBAction)munepoke:(id)sender;
+- (IBAction)desk:(id)sender;
+- (IBAction)addTime:(id)sender;
+- (IBAction)minusTime:(id)sender;
+
 @end

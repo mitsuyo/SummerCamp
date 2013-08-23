@@ -30,4 +30,15 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)munepoke:(id)sender {
+}
+
+- (IBAction)desk:(id)sender {
+}
+
+- (IBAction)addTime:(id)sender {
+}
+
+- (IBAction)minusTime:(id)sender {
+}
 @end

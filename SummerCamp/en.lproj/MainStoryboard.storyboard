@@ -30,6 +30,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="Yc5-ER-Zlg" kind="push" id="i1h-cq-kvZ"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="acC-4z-t68">
                                 <rect key="frame" x="244" y="256" width="40" height="44"/>
@@ -42,6 +45,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="desk:" destination="2" eventType="touchUpInside" id="iu1-dB-qay"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Qlb-gF-WTV">
                                 <rect key="frame" x="22" y="256" width="70" height="44"/>
@@ -54,6 +60,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="munepoke:" destination="2" eventType="touchUpInside" id="Frw-BJ-KJp"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="xtY-Xb-rmM">
                                 <rect key="frame" x="40" y="381" width="33" height="44"/>
@@ -66,6 +75,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="addTime:" destination="2" eventType="touchUpInside" id="vOO-Ia-adC"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="s1H-v5-41X">
                                 <rect key="frame" x="249" y="381" width="29" height="44"/>
@@ -78,10 +90,16 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="minusTime:" destination="2" eventType="touchUpInside" id="Gdl-o2-89O"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="timerLabel" destination="CgD-6R-AKn" id="nFJ-vY-pWB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
             </objects>
@@ -96,6 +114,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Thf-NL-CkI"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RP7-5C-CHb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -108,6 +127,12 @@
         </class>
         <class className="TopViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/TopViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="addTime:"/>
+                <relationship kind="action" name="desk:"/>
+                <relationship kind="action" name="munepoke:"/>
+                <relationship kind="outlet" name="timerLabel" candidateClass="UILabel"/>
+            </relationships>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
