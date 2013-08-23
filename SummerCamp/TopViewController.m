@@ -41,11 +41,11 @@
     [ud setBool:isMunepoke forKey:@"mode"];
     [ud synchronize];
     
-    self.munepokeButton.enabled = !isMunepoke;
-    self.deskButton.enabled = isMunepoke;
-    
-    self.munepokeButton.alpha = isMunepoke ? 0.0f : 1.0f;
-    self.deskButton.alpha = !isMunepoke ? 0.0f : 1.0f;
+//    self.munepokeButton.enabled = !isMunepoke;
+//    self.deskButton.enabled = isMunepoke;
+//    
+//    self.munepokeButton.alpha = isMunepoke ? 0.0f : 1.0f;
+//    self.deskButton.alpha = !isMunepoke ? 0.0f : 1.0f;
 }
 
 - (void)didReceiveMemoryWarning
