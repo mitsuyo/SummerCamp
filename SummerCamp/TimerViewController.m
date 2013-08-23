@@ -45,8 +45,9 @@
     timeCount = 0;
 
     realTime = self.time;
-//    realTime = 70;
+    realTime = 70;
 
+    _timeBarView.backgroundColor = [UIColor clearColor];
     //■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■　ここからゲームview
     count = 0;
     judgeFlag = YES;
@@ -74,7 +75,16 @@
 
 //    self.timeBar.frame = CGRectMake(74, 192, 230, 60);
 //    self.timeBar.frame = CGRectMake(74, 192, 230, 60);
-    timeBarWidth = self.timeBar.frame.size.width;
+//    timeBarWidth = self.timeBar.frame.size.width;
+    
+    self.secondGameView.alpha = 0.0;
+    
+    //timeBarのwidthをrealTimeの秒数で0pxに変更する。
+    [UIView beginAnimations:nil context:nil];
+    [UIView setAnimationDuration:realTime];
+    self.timeBar.frame = CGRectMake(57, 0, 0, 60);
+    [UIView commitAnimations];
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -99,29 +109,29 @@
         realTime = self.time;
     }
 
-    if(realTime >= 60.0f)
-    {
-        timeBarWidth = 230 - (230.0f / (self.time - 60.0f) * timeCount);
-        NSLog(@"width = %f ", self.time);
-         NSLog(@"width = %f ", (self.time - 60.0f));
-        [self.timeBar setFrame:CGRectMake(74, 192, timeBarWidth, 60)];
-        NSLog(@"width = %d ", timeBarWidth);
-    }
 
+    //realTimeが残り60秒になったら
     if(realTime < 60.0f)
     {
+        //timeBarのイメージをyellowに変更する。
+        self.timeBar.image = [UIImage imageNamed:@"scene02_timebarWarning.png"];
+        //画面をフラッシュさせる。
         if((int)realTime % 2 == 0)
         {
             self.view.backgroundColor = [UIColor yellowColor];
         }else{
             self.view.backgroundColor = [UIColor blackColor];
         }
-        if(realTime == 30){
-            [self gameStart];
-        }
-    }else{
+    }
+    if(realTime < 50.0f){
+        NSLog(@"OK");
+        self.timeBar.image = [UIImage imageNamed:@"scene02_timebarOut.png"];
         self.view.backgroundColor = [UIColor whiteColor];
     }
+    if(realTime < 40.0f){
+        [self gameStart];
+    }
+    NSLog(@"%f",realTime);
 }
 
 - (IBAction)wakeUp:(id)sender
