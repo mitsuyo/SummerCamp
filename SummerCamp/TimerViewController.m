@@ -89,15 +89,19 @@
         realTime = self.time;
     }
 
-    if(realTime == 68.0f)
+    if(realTime < 65.0f)
     {
-        [self gameStart];
-//        if((int)realTime % 2 == 0)
-//        {
-//            self.view.backgroundColor = [UIColor yellowColor];
-//        }else{
-//            self.view.backgroundColor = [UIColor blackColor];
-//        }
+        if((int)realTime % 2 == 0)
+        {
+            self.view.backgroundColor = [UIColor yellowColor];
+        }else{
+            self.view.backgroundColor = [UIColor blackColor];
+        }
+        if(realTime == 60){
+            [self gameStart];
+        }
+    }else{
+        self.view.backgroundColor = [UIColor whiteColor];
     }
 }
 
@@ -116,8 +120,6 @@
             ((UILabel *)_answerLabels[i]).alpha = 1.0;
         }
     }
-    
-    
     for(int i = 1; i < 10; i++)
     {
         if(button.tag == i)
@@ -140,7 +142,10 @@
     {
         if(judgeFlag)
         {
+            self.view.backgroundColor = [UIColor whiteColor];
             [self gameEnd];
+            //■■■■■■■■■ 変数の値を警告の時間に変更する
+            realTime = 70;
         }else{
             count = 0;
             judgeFlag = YES;
