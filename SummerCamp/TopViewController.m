@@ -32,7 +32,8 @@
     
     [self setButtonEnabled];
     
-    self.timerLabel.text = [NSString stringWithFormat:@"%f",timer];
+    self.timerLabel.text = [NSString stringWithFormat:@"%d分",(int)timer];
+    
 }
 
 - (void)setButtonEnabled {
@@ -76,8 +77,8 @@
 
 - (IBAction)minusTime:(id)sender {
     
-    // Minは0分にする
-    if(timer == 0) {
+    // Minは3分にする
+    if(timer == 3) {
         return;
     }
     
@@ -87,7 +88,7 @@
 
 - (void)setTimer {
     
-    self.timerLabel.text = [NSString stringWithFormat:@"%f",timer];
+    self.timerLabel.text = [NSString stringWithFormat:@"%d分",(int)timer];
     
     // モードを登録
     [ud setInteger:timer forKey:@"timer"];
