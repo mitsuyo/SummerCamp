@@ -14,7 +14,10 @@
 
 @implementation TimerViewController
 {
+    NSString *timeText;
     NSTimer *tm;
+    int timeSecond;
+    int timeMinute;
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -30,8 +33,20 @@
 {
     [super viewDidLoad];
 
-    self.time = 600.0f;
-    tm = [NSTimer scheduledTimerWithTimeInterval:0.1f target:self selector:@selector(timerCountDown:) userInfo:nil repeats:YES];
+    timeText = [NSString stringWithFormat:@"%f", self.time];
+
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+
+    self.time = 10.0f;
+    self.timeLabel.text = timeText;
+
+    tm = [NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@selector(timerCountDown:) userInfo:nil repeats:YES];
+
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -42,14 +57,23 @@
 
 - (void)timerCountDown:(NSTimer*)timer
 {
-    self.time -= 0.1f;
+    self.time -= 1.0f;
     
+    timeMinute = (int) self.time / 60;
+    timeSecond = (int) self.time - timeMinute;
+
+    
+    if(self.time == 0.0f)
+    {
+        [tm invalidate];
+    }
+
 }
 
 - (IBAction)wakeUp:(id)sender
 {
     [tm invalidate];
-    self.time = 600.0f;
+
 }
 
 @end

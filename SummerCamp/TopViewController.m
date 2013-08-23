@@ -104,4 +104,8 @@
     controller.time = timer * 60;
 }
 
+- (IBAction)back:(UIStoryboardSegue *)sender
+{
+}
+
 @end
