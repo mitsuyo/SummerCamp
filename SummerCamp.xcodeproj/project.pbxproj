@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		84F6FD2F17C79A71008B1231 /* scene01_deskBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 84F6FD2A17C79A71008B1231 /* scene01_deskBtn.png */; };
+		84F6FD3017C79A71008B1231 /* scene01_minus1Btn.png in Resources */ = {isa = PBXBuildFile; fileRef = 84F6FD2B17C79A71008B1231 /* scene01_minus1Btn.png */; };
+		84F6FD3117C79A71008B1231 /* scene01_plus1Btn.png in Resources */ = {isa = PBXBuildFile; fileRef = 84F6FD2C17C79A71008B1231 /* scene01_plus1Btn.png */; };
+		84F6FD3217C79A71008B1231 /* scene01_pocketBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 84F6FD2D17C79A71008B1231 /* scene01_pocketBtn.png */; };
+		84F6FD3317C79A71008B1231 /* scene01_startBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 84F6FD2E17C79A71008B1231 /* scene01_startBtn.png */; };
 		C206278B17C59B4A001A581A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C206278A17C59B4A001A581A /* UIKit.framework */; };
 		C206278D17C59B4A001A581A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C206278C17C59B4A001A581A /* Foundation.framework */; };
 		C206278F17C59B4A001A581A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C206278E17C59B4A001A581A /* CoreGraphics.framework */; };
@@ -22,6 +27,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		84F6FD2A17C79A71008B1231 /* scene01_deskBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scene01_deskBtn.png; sourceTree = "<group>"; };
+		84F6FD2B17C79A71008B1231 /* scene01_minus1Btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scene01_minus1Btn.png; sourceTree = "<group>"; };
+		84F6FD2C17C79A71008B1231 /* scene01_plus1Btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scene01_plus1Btn.png; sourceTree = "<group>"; };
+		84F6FD2D17C79A71008B1231 /* scene01_pocketBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scene01_pocketBtn.png; sourceTree = "<group>"; };
+		84F6FD2E17C79A71008B1231 /* scene01_startBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scene01_startBtn.png; sourceTree = "<group>"; };
 		C206278717C59B4A001A581A /* SummerCamp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SummerCamp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C206278A17C59B4A001A581A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		C206278C17C59B4A001A581A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -56,6 +66,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		84F6FD2917C79A59008B1231 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				84F6FD2A17C79A71008B1231 /* scene01_deskBtn.png */,
+				84F6FD2B17C79A71008B1231 /* scene01_minus1Btn.png */,
+				84F6FD2C17C79A71008B1231 /* scene01_plus1Btn.png */,
+				84F6FD2D17C79A71008B1231 /* scene01_pocketBtn.png */,
+				84F6FD2E17C79A71008B1231 /* scene01_startBtn.png */,
+			);
+			name = images;
+			sourceTree = "<group>";
+		};
 		C206277E17C59B4A001A581A = {
 			isa = PBXGroup;
 			children = (
@@ -99,6 +121,7 @@
 		C206279117C59B4B001A581A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				84F6FD2917C79A59008B1231 /* images */,
 				C206279217C59B4B001A581A /* SummerCamp-Info.plist */,
 				C206279317C59B4B001A581A /* InfoPlist.strings */,
 				C206279617C59B4B001A581A /* main.m */,
@@ -184,6 +207,11 @@
 				C206279F17C59B4B001A581A /* Default@2x.png in Resources */,
 				C20627A117C59B4B001A581A /* Default-568h@2x.png in Resources */,
 				C20627A417C59B4B001A581A /* MainStoryboard.storyboard in Resources */,
+				84F6FD2F17C79A71008B1231 /* scene01_deskBtn.png in Resources */,
+				84F6FD3017C79A71008B1231 /* scene01_minus1Btn.png in Resources */,
+				84F6FD3117C79A71008B1231 /* scene01_plus1Btn.png in Resources */,
+				84F6FD3217C79A71008B1231 /* scene01_pocketBtn.png in Resources */,
+				84F6FD3317C79A71008B1231 /* scene01_startBtn.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
