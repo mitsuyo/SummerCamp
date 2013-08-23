@@ -12,7 +12,16 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    // 初期値を設定
+    NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
+    
+    NSMutableDictionary *defaults = [NSMutableDictionary dictionary];
+    
+    // 初期値を設定する（胸ポケモード、タイマーの初期値は10分）
+    [defaults setObject:@"YES" forKey:@"mode"];
+    [defaults setObject:@"10" forKey:@"timer"];
+    [ud registerDefaults:defaults];
+
     return YES;
 }
 							
