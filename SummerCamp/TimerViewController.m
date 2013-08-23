@@ -89,6 +89,8 @@
         realTime = self.time;
     }
 
+
+
     if(realTime < 65.0f)
     {
         if((int)realTime % 2 == 0)

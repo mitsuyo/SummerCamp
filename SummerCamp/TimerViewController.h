@@ -32,4 +32,6 @@
 @property (strong, nonatomic) IBOutletCollection(UILabel) NSArray *answerLabels;
 @property (weak, nonatomic) IBOutlet UILabel *judgeTextLabel;
 
+@property (weak, nonatomic) IBOutlet UIImageView *timeBar;
+
 @end

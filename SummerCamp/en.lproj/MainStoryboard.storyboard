@@ -158,13 +158,13 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="scene02_timebarSafe.png" id="1ZL-8h-bW1">
-                                <rect key="frame" x="73" y="192" width="230" height="60"/>
+                                <rect key="frame" x="74" y="192" width="230" height="60"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="scene02_time.png" id="mjI-cD-TO2">
                                 <rect key="frame" x="17" y="192" width="60" height="60"/>
                             </imageView>
                             <view contentMode="scaleToFill" id="H7P-xA-ISR">
-                                <rect key="frame" x="0.0" y="0.0" width="325" height="460"/>
+                                <rect key="frame" x="320" y="0.0" width="325" height="460"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="hyA-kI-Ic0">
@@ -407,6 +407,7 @@
                     <connections>
                         <outlet property="judgeTextLabel" destination="P7v-ci-yOB" id="FKU-AB-uuz"/>
                         <outlet property="secondGameView" destination="H7P-xA-ISR" id="UcF-qy-DgB"/>
+                        <outlet property="timeBar" destination="1ZL-8h-bW1" id="1Bw-1k-47Q"/>
                         <outlet property="timeLabel" destination="7NW-fK-76X" id="Del-U7-YMS"/>
                         <outlet property="wakeButton" destination="LYx-gP-SYx" id="dad-j6-wZn"/>
                         <outletCollection property="questionLabels" destination="1ON-T4-2op" id="sWC-qL-hPz"/>
@@ -467,6 +468,7 @@
                 <relationship kind="action" name="wakeUp:"/>
                 <relationship kind="outlet" name="judgeTextLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="secondGameView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="timeBar" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="timeLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="wakeButton" candidateClass="UIButton"/>
                 <relationship kind="outletCollection" name="answerLabels" candidateClass="UILabel"/>
