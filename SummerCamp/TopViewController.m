@@ -6,13 +6,13 @@
 //  Copyright (c) 2013年 Tadahiro Mitsuyo. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "TopViewController.h"
 
-@interface ViewController ()
+@interface TopViewController ()
 
 @end
 
-@implementation ViewController
+@implementation TopViewController
 
 - (void)viewDidLoad
 {
