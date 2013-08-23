@@ -11,7 +11,7 @@
 @interface TimerViewController : UIViewController
 
 // タイマー（分）
-@property (nonatomic, assign) float time;
+@property (nonatomic, assign) int time;
 
 // モード（胸ポケ:0,机:1）
 @property (nonatomic, assign) int mode;
