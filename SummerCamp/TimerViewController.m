@@ -110,27 +110,32 @@
     }
 
 
-    //realTimeが残り60秒になったら
-    if(realTime < 60.0f)
+    //realTimeが残り60秒になったら（警告１）
+    if(realTime == 60.0f)
     {
         //timeBarのイメージをyellowに変更する。
         self.timeBar.image = [UIImage imageNamed:@"scene02_timebarWarning.png"];
         //画面をフラッシュさせる。
+        if(realTime > 50.0f){
         if((int)realTime % 2 == 0)
         {
-            self.view.backgroundColor = [UIColor yellowColor];
-        }else{
-            self.view.backgroundColor = [UIColor blackColor];
+                self.view.backgroundColor = [UIColor yellowColor];
+            }else{
+                self.view.backgroundColor = [UIColor blackColor];
+            }
         }
     }
-    if(realTime < 50.0f){
-        NSLog(@"OK");
+    //警告２
+    if(realTime == 50.0f){
         self.timeBar.image = [UIImage imageNamed:@"scene02_timebarOut.png"];
-        self.view.backgroundColor = [UIColor whiteColor];
-    }
-    if(realTime < 40.0f){
         [self gameStart];
+        self.view.backgroundColor = [UIColor whiteColor];
+        [UIView beginAnimations:nil context:nil];
+        [UIView setAnimationDuration:0.5];
+        self.timeBarView.frame = CGRectMake(17, 10, 287, 60);
+        [UIView commitAnimations];
     }
+
     NSLog(@"%f",realTime);
 }
 
@@ -196,7 +201,7 @@
     self.secondGameView.alpha = 0.0;
     [UIView beginAnimations:nil context:nil];
     [UIView setAnimationDuration:1];
-    self.secondGameView.frame = CGRectMake(0, 0, 320, 460);
+    self.secondGameView.frame = CGRectMake(0, 75, 320, 460);
     self.secondGameView.alpha = 1.0;
     [UIView commitAnimations];
 }
@@ -209,6 +214,15 @@
     [UIView beginAnimations:nil context:nil];
     [UIView setAnimationDuration:0.5];
     self.secondGameView.frame = CGRectMake(0, 460, 320, 460);
+    CGRect frame = _timeBarView.frame;
+    frame.origin.y = 192;
+    _timeBarView.frame = frame;
+    [UIView commitAnimations];
+    
+    //timebarを再セットする
+    [UIView beginAnimations:nil context:nil];
+    [UIView setAnimationDuration:0.5];
+    self.timeBarView.frame = CGRectMake(17, 10, 287, 60);
     [UIView commitAnimations];
     
 }

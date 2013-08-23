@@ -120,19 +120,6 @@
                         <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" id="Ivz-Db-1gG" userLabel="timeBarView">
-                                <rect key="frame" x="17" y="192" width="287" height="60"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="scene02_time.png" id="mjI-cD-TO2">
-                                        <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
-                                    </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="scene02_timebarSafe.png" id="1ZL-8h-bW1">
-                                        <rect key="frame" x="57" y="0.0" width="230" height="60"/>
-                                    </imageView>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                            </view>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="10:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="7NW-fK-76X">
                                 <rect key="frame" x="17" y="87" width="286" height="118"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -170,6 +157,19 @@
                                     <segue destination="uGs-be-x8C" kind="unwind" unwindAction="back:" id="kHi-dZ-8jf"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" id="Ivz-Db-1gG" userLabel="timeBarView">
+                                <rect key="frame" x="17" y="192" width="287" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="scene02_time.png" id="mjI-cD-TO2">
+                                        <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="scene02_timebarSafe.png" id="1ZL-8h-bW1">
+                                        <rect key="frame" x="57" y="0.0" width="230" height="60"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
                             <view contentMode="scaleToFill" id="H7P-xA-ISR">
                                 <rect key="frame" x="0.0" y="75" width="325" height="385"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -477,35 +477,6 @@
         <image name="scene02_time.png" width="120" height="120"/>
         <image name="scene02_timebarSafe.png" width="460" height="120"/>
     </resources>
-    <classes>
-        <class className="TimerViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TimerViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="tapNumberButton:"/>
-                <relationship kind="action" name="wakeUp:"/>
-                <relationship kind="outlet" name="judgeTextLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="secondGameView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="timeBar" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="timeBarView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="timeLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="wakeButton" candidateClass="UIButton"/>
-                <relationship kind="outletCollection" name="answerLabels" candidateClass="UILabel"/>
-                <relationship kind="outletCollection" name="questionLabels" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="TopViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TopViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="addTime:"/>
-                <relationship kind="action" name="desk:"/>
-                <relationship kind="action" name="minusTime:"/>
-                <relationship kind="action" name="munepoke:"/>
-                <relationship kind="outlet" name="deskButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="munepokeButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="timerLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
