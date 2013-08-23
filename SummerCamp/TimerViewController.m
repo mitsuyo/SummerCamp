@@ -23,6 +23,10 @@
     int count;
     //ゲームの正解か不正解かをジャッジする。
     BOOL judgeFlag;
+
+    int timeBarWidth;
+    
+    int timeCount;
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -37,9 +41,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    timeCount = 0;
 
-//    realTime = self.time;
-    realTime = 70;
+    realTime = self.time;
+//    realTime = 70;
 
     //■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■　ここからゲームview
     count = 0;
@@ -66,7 +72,9 @@
 
     tm = [NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@selector(timerCountDown:) userInfo:nil repeats:YES];
 
-
+//    self.timeBar.frame = CGRectMake(74, 192, 230, 60);
+//    self.timeBar.frame = CGRectMake(74, 192, 230, 60);
+    timeBarWidth = self.timeBar.frame.size.width;
 }
 
 - (void)didReceiveMemoryWarning
@@ -78,6 +86,8 @@
 //タイマーメソッドの実行
 - (void)timerCountDown:(NSTimer*)timer
 {
+    timeCount++;
+    
     realTime -= 1.0f;
     timeMinute = (int) realTime / 60;
     timeSecond = (int) realTime - timeMinute * 60;
@@ -89,9 +99,16 @@
         realTime = self.time;
     }
 
+    if(realTime >= 60.0f)
+    {
+        timeBarWidth = 230 - (230.0f / (self.time - 60.0f) * timeCount);
+        NSLog(@"width = %f ", self.time);
+         NSLog(@"width = %f ", (self.time - 60.0f));
+        [self.timeBar setFrame:CGRectMake(74, 192, timeBarWidth, 60)];
+        NSLog(@"width = %d ", timeBarWidth);
+    }
 
-
-    if(realTime < 65.0f)
+    if(realTime < 60.0f)
     {
         if((int)realTime % 2 == 0)
         {
@@ -99,7 +116,7 @@
         }else{
             self.view.backgroundColor = [UIColor blackColor];
         }
-        if(realTime == 60){
+        if(realTime == 30){
             [self gameStart];
         }
     }else{
