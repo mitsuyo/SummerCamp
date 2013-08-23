@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface GameViewController : UIViewController
+@interface TimerViewController : UIViewController
+
+@property (nonatomic, assign) float time;
 
 @end

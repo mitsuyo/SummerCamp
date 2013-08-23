@@ -6,13 +6,13 @@
 //  Copyright (c) 2013年 Tadahiro Mitsuyo. All rights reserved.
 //
 
-#import "GameViewController.h"
+#import "TimerViewController.h"
 
-@interface GameViewController ()
+@interface TimerViewController ()
 
 @end
 
-@implementation GameViewController
+@implementation TimerViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

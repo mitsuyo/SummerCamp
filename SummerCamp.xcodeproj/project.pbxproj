@@ -18,8 +18,7 @@
 		C20627A117C59B4B001A581A /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C20627A017C59B4B001A581A /* Default-568h@2x.png */; };
 		C20627A417C59B4B001A581A /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C20627A217C59B4B001A581A /* MainStoryboard.storyboard */; };
 		C20627A717C59B4B001A581A /* TopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C20627A617C59B4B001A581A /* TopViewController.m */; };
-		C2BB070517C70EAC0086413B /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2BB070417C70EAC0086413B /* GameViewController.m */; };
-		C2BB070A17C70ED60086413B /* ResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2BB070917C70ED60086413B /* ResultViewController.m */; };
+		C2BB070517C70EAC0086413B /* TimerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2BB070417C70EAC0086413B /* TimerViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,10 +38,8 @@
 		C20627A317C59B4B001A581A /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		C20627A517C59B4B001A581A /* TopViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TopViewController.h; sourceTree = "<group>"; };
 		C20627A617C59B4B001A581A /* TopViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TopViewController.m; sourceTree = "<group>"; };
-		C2BB070317C70EAC0086413B /* GameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
-		C2BB070417C70EAC0086413B /* GameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
-		C2BB070817C70ED60086413B /* ResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultViewController.h; sourceTree = "<group>"; };
-		C2BB070917C70ED60086413B /* ResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultViewController.m; sourceTree = "<group>"; };
+		C2BB070317C70EAC0086413B /* TimerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimerViewController.h; sourceTree = "<group>"; };
+		C2BB070417C70EAC0086413B /* TimerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimerViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,8 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				C2BB070617C70EB50086413B /* Top */,
-				C2BB070717C70EBE0086413B /* Game */,
-				C2BB070B17C70EDE0086413B /* Result */,
+				C2BB070717C70EBE0086413B /* Timer */,
 				C206279917C59B4B001A581A /* AppDelegate.h */,
 				C206279A17C59B4B001A581A /* AppDelegate.m */,
 				C20627A217C59B4B001A581A /* MainStoryboard.storyboard */,
@@ -123,22 +119,13 @@
 			name = Top;
 			sourceTree = "<group>";
 		};
-		C2BB070717C70EBE0086413B /* Game */ = {
+		C2BB070717C70EBE0086413B /* Timer */ = {
 			isa = PBXGroup;
 			children = (
-				C2BB070317C70EAC0086413B /* GameViewController.h */,
-				C2BB070417C70EAC0086413B /* GameViewController.m */,
+				C2BB070317C70EAC0086413B /* TimerViewController.h */,
+				C2BB070417C70EAC0086413B /* TimerViewController.m */,
 			);
-			name = Game;
-			sourceTree = "<group>";
-		};
-		C2BB070B17C70EDE0086413B /* Result */ = {
-			isa = PBXGroup;
-			children = (
-				C2BB070817C70ED60086413B /* ResultViewController.h */,
-				C2BB070917C70ED60086413B /* ResultViewController.m */,
-			);
-			name = Result;
+			name = Timer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -210,8 +197,7 @@
 				C206279717C59B4B001A581A /* main.m in Sources */,
 				C206279B17C59B4B001A581A /* AppDelegate.m in Sources */,
 				C20627A717C59B4B001A581A /* TopViewController.m in Sources */,
-				C2BB070517C70EAC0086413B /* GameViewController.m in Sources */,
-				C2BB070A17C70ED60086413B /* ResultViewController.m in Sources */,
+				C2BB070517C70EAC0086413B /* TimerViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
