@@ -14,10 +14,10 @@
 
 @implementation TimerViewController
 {
-    NSString *timeText;
-    NSTimer *tm;
     int timeSecond;
     int timeMinute;
+    NSTimer *tm;
+    float realTime;
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -33,7 +33,8 @@
 {
     [super viewDidLoad];
 
-    timeText = [NSString stringWithFormat:@"%f", self.time];
+//    realTime = self.time;
+    realTime = 70;
 
 }
 
@@ -41,8 +42,9 @@
 {
     [super viewWillAppear:animated];
 
-    self.time = 10.0f;
-    self.timeLabel.text = timeText;
+    timeMinute = (int) realTime / 60;
+    timeSecond = (int) realTime - timeMinute * 60;
+    self.timeLabel.text = [NSString stringWithFormat:@"%02d : %02d", timeMinute, timeSecond];
 
     tm = [NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@selector(timerCountDown:) userInfo:nil repeats:YES];
 
@@ -57,23 +59,32 @@
 
 - (void)timerCountDown:(NSTimer*)timer
 {
-    self.time -= 1.0f;
-    
-    timeMinute = (int) self.time / 60;
-    timeSecond = (int) self.time - timeMinute;
+    realTime -= 1.0f;
+    timeMinute = (int) realTime / 60;
+    timeSecond = (int) realTime - timeMinute * 60;
+    self.timeLabel.text = [NSString stringWithFormat:@"%02d : %02d", timeMinute, timeSecond];
 
-    
-    if(self.time == 0.0f)
+    if(realTime == 0.0f)
     {
         [tm invalidate];
+        realTime = self.time;
+    }
+
+    if(realTime < 60.0f)
+    {
+        if((int)realTime % 2 == 0)
+        {
+            self.view.backgroundColor = [UIColor yellowColor];
+        }else{
+            self.view.backgroundColor = [UIColor blackColor];
+        }
     }
 
 }
 
 - (IBAction)wakeUp:(id)sender
 {
-    [tm invalidate];
-
+    realTime = self.time + 1;
 }
 
 @end
