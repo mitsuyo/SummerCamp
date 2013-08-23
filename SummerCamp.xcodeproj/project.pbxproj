@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		445C157C17C7E0830005BB56 /* numberRect.png in Resources */ = {isa = PBXBuildFile; fileRef = 445C157B17C7E0830005BB56 /* numberRect.png */; };
+		84606BC717C7F0C200592652 /* scene02_resetBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 84606BC617C7F0C200592652 /* scene02_resetBtn.png */; };
 		84CD694C17C7E67A00A60284 /* mimamo.png in Resources */ = {isa = PBXBuildFile; fileRef = 84CD693A17C7E67A00A60284 /* mimamo.png */; };
 		84CD694D17C7E67A00A60284 /* minamo01.png in Resources */ = {isa = PBXBuildFile; fileRef = 84CD693B17C7E67A00A60284 /* minamo01.png */; };
 		84CD694E17C7E67A00A60284 /* minamo02.png in Resources */ = {isa = PBXBuildFile; fileRef = 84CD693C17C7E67A00A60284 /* minamo02.png */; };
@@ -47,6 +48,7 @@
 
 /* Begin PBXFileReference section */
 		445C157B17C7E0830005BB56 /* numberRect.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = numberRect.png; sourceTree = "<group>"; };
+		84606BC617C7F0C200592652 /* scene02_resetBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scene02_resetBtn.png; sourceTree = "<group>"; };
 		84CD693A17C7E67A00A60284 /* mimamo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mimamo.png; sourceTree = "<group>"; };
 		84CD693B17C7E67A00A60284 /* minamo01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = minamo01.png; sourceTree = "<group>"; };
 		84CD693C17C7E67A00A60284 /* minamo02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = minamo02.png; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 		84F6FD2917C79A59008B1231 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				84606BC617C7F0C200592652 /* scene02_resetBtn.png */,
 				84CD693A17C7E67A00A60284 /* mimamo.png */,
 				84CD693B17C7E67A00A60284 /* minamo01.png */,
 				84CD693C17C7E67A00A60284 /* minamo02.png */,
@@ -288,6 +291,7 @@
 				84CD695B17C7E67A00A60284 /* scene02_timebarOut.png in Resources */,
 				84CD695C17C7E67A00A60284 /* scene02_timebarSafe.png in Resources */,
 				84CD695D17C7E67A00A60284 /* scene02_timebarWarning.png in Resources */,
+				84606BC717C7F0C200592652 /* scene02_resetBtn.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
