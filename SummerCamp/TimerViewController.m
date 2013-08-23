@@ -41,7 +41,7 @@
 //    realTime = self.time;
     realTime = 70;
 
-    //■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■　ここから
+    //■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■　ここからゲームview
     count = 0;
     judgeFlag = YES;
     self.judgeTextLabel.hidden = YES;
@@ -75,6 +75,7 @@
     // Dispose of any resources that can be recreated.
 }
 
+//タイマーメソッドの実行
 - (void)timerCountDown:(NSTimer*)timer
 {
     realTime -= 1.0f;
@@ -88,16 +89,16 @@
         realTime = self.time;
     }
 
-    if(realTime < 60.0f)
+    if(realTime == 68.0f)
     {
-        if((int)realTime % 2 == 0)
-        {
-            self.view.backgroundColor = [UIColor yellowColor];
-        }else{
-            self.view.backgroundColor = [UIColor blackColor];
-        }
+        [self gameStart];
+//        if((int)realTime % 2 == 0)
+//        {
+//            self.view.backgroundColor = [UIColor yellowColor];
+//        }else{
+//            self.view.backgroundColor = [UIColor blackColor];
+//        }
     }
-
 }
 
 - (IBAction)wakeUp:(id)sender
@@ -105,21 +106,49 @@
     realTime = self.time + 1;
 }
 
+//数字をタップしたときのメソッド
 - (IBAction)tapNumberButton:(id)sender {
+    UIButton *button = (UIButton *)sender;
+    self.judgeTextLabel.hidden = YES;
+    if(count == 0){
+        for(int i = 0; i < 6; i++){
+            ((UILabel *)_answerLabels[i]).text = [NSString stringWithFormat:@""];
+            ((UILabel *)_answerLabels[i]).alpha = 1.0;
+        }
+    }
+    
+    
+    for(int i = 1; i < 10; i++)
+    {
+        if(button.tag == i)
+        {
+            //answerLabelsにボタンの数字を入力する。
+        ((UILabel *)_answerLabels[count]).text = [NSString stringWithFormat:@"%d",button.tag];
+        }
+    }
+    //問題と答えが不正解ならjudgeFlagをNOにする。
+    if(![(((UILabel *)_answerLabels[count]).text) isEqual:(((UILabel *)_questionLabels[count]).text)])
+    {
+        judgeFlag = NO;
+        self.judgeTextLabel.hidden = NO;
+    }else{
+        judgeFlag = YES;
+        count++;
+    }
+    //全ての項目が埋まったら実行
+    if(count == 6)
+    {
+        if(judgeFlag)
+        {
+            [self gameEnd];
+        }else{
+            count = 0;
+            judgeFlag = YES;
+        }
+    }
 }
 
-//ゲームが終了した時に実行される。
-- (void) gameEnd
-{
-    count = 0;
-    judgeFlag = YES;
-    self.secondGameView.alpha = 1.0;
-    [UIView beginAnimations:nil context:nil];
-    [UIView setAnimationDuration:0.5];
-    self.secondGameView.frame = CGRectMake(0, 460, 320, 460);
-    [UIView commitAnimations];
-    
-}
+
 //ゲームを開始する。
 - (void) gameStart
 {
@@ -136,6 +165,18 @@
     self.secondGameView.frame = CGRectMake(0, 0, 320, 460);
     self.secondGameView.alpha = 1.0;
     [UIView commitAnimations];
+}
+//ゲームが終了した時に実行される。
+- (void) gameEnd
+{
+    count = 0;
+    judgeFlag = YES;
+    self.secondGameView.alpha = 1.0;
+    [UIView beginAnimations:nil context:nil];
+    [UIView setAnimationDuration:0.5];
+    self.secondGameView.frame = CGRectMake(0, 460, 320, 460);
+    [UIView commitAnimations];
+    
 }
 
 @end
