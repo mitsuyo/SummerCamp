@@ -23,5 +23,13 @@
 @property (weak, nonatomic) IBOutlet UIButton *wakeButton;
 
 - (IBAction)wakeUp:(id)sender;
+//せり上がってくるview
+@property (weak, nonatomic) IBOutlet UIView *secondGameView;
+- (IBAction)tapNumberButton:(id)sender;
+//問題ラベル
+@property (strong, nonatomic) IBOutletCollection(UILabel) NSArray *questionLabels;
+//答えラベル
+@property (strong, nonatomic) IBOutletCollection(UILabel) NSArray *answerLabels;
+@property (weak, nonatomic) IBOutlet UILabel *judgeTextLabel;
 
 @end

@@ -18,6 +18,11 @@
     int timeMinute;
     NSTimer *tm;
     float realTime;
+    
+    //ゲームのクリックされた回数をカウントする。
+    int count;
+    //ゲームの正解か不正解かをジャッジする。
+    BOOL judgeFlag;
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -35,6 +40,19 @@
 
 //    realTime = self.time;
     realTime = 70;
+
+    //■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■　ここから
+    count = 0;
+    judgeFlag = YES;
+    self.judgeTextLabel.hidden = YES;
+    self.secondGameView.frame = CGRectMake(0, 460, 320, 460);
+    self.secondGameView.alpha = 0.0;
+    _answerLabels = [_answerLabels sortedArrayUsingComparator:^(UILabel *item1,UILabel *item2) {
+        return item1.tag - item2.tag;
+    }];
+    _questionLabels = [_questionLabels sortedArrayUsingComparator:^(UILabel *item1,UILabel *item2) {
+        return item1.tag - item2.tag;
+    }];
 
 }
 
@@ -85,6 +103,39 @@
 - (IBAction)wakeUp:(id)sender
 {
     realTime = self.time + 1;
+}
+
+- (IBAction)tapNumberButton:(id)sender {
+}
+
+//ゲームが終了した時に実行される。
+- (void) gameEnd
+{
+    count = 0;
+    judgeFlag = YES;
+    self.secondGameView.alpha = 1.0;
+    [UIView beginAnimations:nil context:nil];
+    [UIView setAnimationDuration:0.5];
+    self.secondGameView.frame = CGRectMake(0, 460, 320, 460);
+    [UIView commitAnimations];
+    
+}
+//ゲームを開始する。
+- (void) gameStart
+{
+    //questionLabelsに乱数を入れる。
+    for(int i = 0; i < 6; i++){
+        ((UILabel *)_answerLabels[i]).text = [NSString stringWithFormat:@""];
+        ((UILabel *)_questionLabels[i]).alpha = 1.0;
+        ((UILabel *)_questionLabels[i]).text = [NSString stringWithFormat:@"%d",arc4random() % 9 + 1];
+    }
+    
+    self.secondGameView.alpha = 0.0;
+    [UIView beginAnimations:nil context:nil];
+    [UIView setAnimationDuration:1];
+    self.secondGameView.frame = CGRectMake(0, 0, 320, 460);
+    self.secondGameView.alpha = 1.0;
+    [UIView commitAnimations];
 }
 
 @end
