@@ -13,6 +13,8 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *timerLabel;
 
+@property (weak, nonatomic) IBOutlet UIButton *munepokeButton;
+@property (weak, nonatomic) IBOutlet UIButton *deskButton;
 
 - (IBAction)munepoke:(id)sender;
 - (IBAction)desk:(id)sender;

@@ -98,6 +98,8 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="deskButton" destination="acC-4z-t68" id="eZd-OM-Plm"/>
+                        <outlet property="munepokeButton" destination="Qlb-gF-WTV" id="f8H-IZ-E8B"/>
                         <outlet property="timerLabel" destination="CgD-6R-AKn" id="nFJ-vY-pWB"/>
                     </connections>
                 </viewController>
@@ -130,8 +132,11 @@
             <relationships>
                 <relationship kind="action" name="addTime:"/>
                 <relationship kind="action" name="desk:"/>
+                <relationship kind="action" name="minusTime:"/>
                 <relationship kind="action" name="munepoke:"/>
+                <relationship kind="outlet" name="munepokeButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="timerLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="tukueButton" candidateClass="UIButton"/>
             </relationships>
         </class>
     </classes>

@@ -13,15 +13,15 @@
 @end
 
 @implementation TopViewController
+{
+    BOOL isMunepoke;
+}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
-    
-    //TEST KOZAWA
 
-    //Hi, I'm Suzuki!
+    isMunepoke = YES;
 }
 
 - (void)didReceiveMemoryWarning
@@ -31,15 +31,27 @@
 }
 
 - (IBAction)munepoke:(id)sender {
+    isMunepoke = YES;
     
+    ((UIButton *)sender).enabled = NO;
 }
 
 - (IBAction)desk:(id)sender {
+    isMunepoke = NO;
+    
+    ((UIButton *)sender).enabled = NO;
 }
 
 - (IBAction)addTime:(id)sender {
+    
 }
 
 - (IBAction)minusTime:(id)sender {
+
 }
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+}
+
 @end
