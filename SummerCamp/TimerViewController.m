@@ -51,7 +51,7 @@
     timeCount = 0;
 
     realTime = self.time;
-//    realTime = 35;
+    realTime = 65;
 
     _timeBarView.backgroundColor = [UIColor clearColor];
     //■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■　ここからゲームview
@@ -75,7 +75,7 @@
 
     timeMinute = (int) realTime / 60;
     timeSecond = (int) realTime - timeMinute * 60;
-    self.timeLabel.text = [NSString stringWithFormat:@"%02d : %02d", timeMinute, timeSecond];
+    self.timeLabel.text = [NSString stringWithFormat:@"%02d:%02d", timeMinute, timeSecond];
     tm = [NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@selector(timerCountDown:) userInfo:nil repeats:YES];
 
 //    self.timeBar.frame = CGRectMake(74, 192, 230, 60);
@@ -106,7 +106,7 @@
     realTime -= 1.0f;
     timeMinute = (int) realTime / 60;
     timeSecond = (int) realTime - timeMinute * 60;
-    self.timeLabel.text = [NSString stringWithFormat:@"%02d : %02d", timeMinute, timeSecond];
+    self.timeLabel.text = [NSString stringWithFormat:@"%02d:%02d", timeMinute, timeSecond];
 
     //アラームが修了したら実行
     if(realTime == 0.0f)
@@ -167,9 +167,23 @@
 
 }
 
+//リセットボタンを押した時に実行される。
 - (IBAction)wakeUp:(id)sender
 {
     realTime = self.time + 1;
+    realTime = self.time;
+    //背景を白色に戻す
+    self.view.backgroundColor = [UIColor whiteColor];
+    //バーの状態を最初に戻す
+    self.timeBar.frame = CGRectMake(57, 0, 230, 60);
+    //バーのイメージをセーフに戻す。
+    self.timeBar.image = [UIImage imageNamed:@"scene02_timebarSafe.png"];
+    //バーのアニメーションを実行する。
+    [UIView beginAnimations:nil context:nil];
+    [UIView setAnimationDuration:realTime];
+    self.timeBar.frame = CGRectMake(57, 0, 0, 60);
+    [UIView commitAnimations];
+    
 }
 
 //数字をタップしたときのメソッド
