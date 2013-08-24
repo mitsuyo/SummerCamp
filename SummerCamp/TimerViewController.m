@@ -314,4 +314,8 @@
     [audioPlayer play];
 }
 
+- (IBAction)backAction:(id)sender {
+    [tm invalidate];
+    [self.navigationController popViewControllerAnimated:YES];
+}
 @end

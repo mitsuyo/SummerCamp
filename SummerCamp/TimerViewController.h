@@ -34,5 +34,6 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *timeBar;
 @property (weak, nonatomic) IBOutlet UIView *timeBarView;
+- (IBAction)backAction:(id)sender;
 
 @end
