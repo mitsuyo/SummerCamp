@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		445C157C17C7E0830005BB56 /* numberRect.png in Resources */ = {isa = PBXBuildFile; fileRef = 445C157B17C7E0830005BB56 /* numberRect.png */; };
+		445C15B117C844CB0005BB56 /* mainSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 445C15B017C844CB0005BB56 /* mainSound.mp3 */; };
 		6DEB98B517C83AFF00757E13 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DEB98B417C83AFE00757E13 /* AVFoundation.framework */; };
 		6DEB98B717C83CD200757E13 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DEB98B617C83CD200757E13 /* AudioToolbox.framework */; };
 		84606BC717C7F0C200592652 /* scene02_resetBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 84606BC617C7F0C200592652 /* scene02_resetBtn.png */; };
@@ -63,6 +64,7 @@
 
 /* Begin PBXFileReference section */
 		445C157B17C7E0830005BB56 /* numberRect.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = numberRect.png; sourceTree = "<group>"; };
+		445C15B017C844CB0005BB56 /* mainSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = mainSound.mp3; sourceTree = "<group>"; };
 		6DEB98B417C83AFE00757E13 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		6DEB98B617C83CD200757E13 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		84606BC617C7F0C200592652 /* scene02_resetBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scene02_resetBtn.png; sourceTree = "<group>"; };
@@ -228,6 +230,7 @@
 		C206279117C59B4B001A581A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				445C15B017C844CB0005BB56 /* mainSound.mp3 */,
 				84F6FD2917C79A59008B1231 /* images */,
 				C206279217C59B4B001A581A /* SummerCamp-Info.plist */,
 				C206279317C59B4B001A581A /* InfoPlist.strings */,
@@ -352,6 +355,7 @@
 				C2BB074017C83F0C0086413B /* back_001_b.png in Resources */,
 				C2BB074117C83F0C0086413B /* back_desk.png in Resources */,
 				C2BB074217C83F0C0086413B /* back_poket.png in Resources */,
+				445C15B117C844CB0005BB56 /* mainSound.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

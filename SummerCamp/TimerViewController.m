@@ -51,7 +51,7 @@
     timeCount = 0;
 
     realTime = self.time;
-//    realTime = 70;
+//    realTime = 35;
 
     _timeBarView.backgroundColor = [UIColor clearColor];
     //■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■　ここからゲームview
@@ -206,6 +206,7 @@
         if(realTime == 0){
             NSLog(@"スタート");
             [soundTm invalidate];
+            audioPlayer = nil;
             //■■■■■■■■■ 変数の値を警告の時間に変更する
             realTime = self.time;
             tm = [NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@selector(timerCountDown:) userInfo:nil repeats:YES];
