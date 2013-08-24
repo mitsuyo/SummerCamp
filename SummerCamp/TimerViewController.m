@@ -8,7 +8,7 @@
 
 #import "TimerViewController.h"
 #import <AudioToolbox/AudioToolbox.h>
-#include <AVFoundation/AVFoundation.h>  
+#include <AVFoundation/AVFoundation.h>
 
 
 @interface TimerViewController ()
@@ -51,7 +51,7 @@
     timeCount = 0;
 
     realTime = self.time;
-    realTime = 70;
+//    realTime = 70;
 
     _timeBarView.backgroundColor = [UIColor clearColor];
     //■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■　ここからゲームview
@@ -76,6 +76,7 @@
     timeMinute = (int) realTime / 60;
     timeSecond = (int) realTime - timeMinute * 60;
     self.timeLabel.text = [NSString stringWithFormat:@"%02d : %02d", timeMinute, timeSecond];
+    tm = [NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@selector(timerCountDown:) userInfo:nil repeats:YES];
 
 //    self.timeBar.frame = CGRectMake(74, 192, 230, 60);
 //    self.timeBar.frame = CGRectMake(74, 192, 230, 60);
@@ -206,13 +207,13 @@
             NSLog(@"スタート");
             [soundTm invalidate];
             //■■■■■■■■■ 変数の値を警告の時間に変更する
-            realTime = 70;
+            realTime = self.time;
             tm = [NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@selector(timerCountDown:) userInfo:nil repeats:YES];
         }
 
         if(judgeFlag)
         {
-            realTime = 70;
+            realTime = self.time;
             self.view.backgroundColor = [UIColor whiteColor];
             [self gameEnd];
            
@@ -274,7 +275,7 @@
     self.timeBar.frame = CGRectMake(57, 0, 0, 60);
     [UIView commitAnimations];
 }
-- (void)soundTimerCountDown:(NSTimer *)timer
+- (void)soundTimerCountDown:(NSTimer*)timer
 {
     AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
 }

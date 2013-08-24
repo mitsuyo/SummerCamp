@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		445C157C17C7E0830005BB56 /* numberRect.png in Resources */ = {isa = PBXBuildFile; fileRef = 445C157B17C7E0830005BB56 /* numberRect.png */; };
+		6DEB98B517C83AFF00757E13 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DEB98B417C83AFE00757E13 /* AVFoundation.framework */; };
+		6DEB98B717C83CD200757E13 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DEB98B617C83CD200757E13 /* AudioToolbox.framework */; };
 		84606BC717C7F0C200592652 /* scene02_resetBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 84606BC617C7F0C200592652 /* scene02_resetBtn.png */; };
 		84C0D39217C8228800C09CB4 /* game_01btn.png in Resources */ = {isa = PBXBuildFile; fileRef = 84C0D38917C8228800C09CB4 /* game_01btn.png */; };
 		84C0D39317C8228800C09CB4 /* game_02btn.png in Resources */ = {isa = PBXBuildFile; fileRef = 84C0D38A17C8228800C09CB4 /* game_02btn.png */; };
@@ -57,6 +59,8 @@
 
 /* Begin PBXFileReference section */
 		445C157B17C7E0830005BB56 /* numberRect.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = numberRect.png; sourceTree = "<group>"; };
+		6DEB98B417C83AFE00757E13 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		6DEB98B617C83CD200757E13 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		84606BC617C7F0C200592652 /* scene02_resetBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scene02_resetBtn.png; sourceTree = "<group>"; };
 		84C0D38917C8228800C09CB4 /* game_01btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = game_01btn.png; sourceTree = "<group>"; };
 		84C0D38A17C8228800C09CB4 /* game_02btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = game_02btn.png; sourceTree = "<group>"; };
@@ -115,6 +119,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6DEB98B717C83CD200757E13 /* AudioToolbox.framework in Frameworks */,
+				6DEB98B517C83AFF00757E13 /* AVFoundation.framework in Frameworks */,
 				C206278B17C59B4A001A581A /* UIKit.framework in Frameworks */,
 				C206278D17C59B4A001A581A /* Foundation.framework in Frameworks */,
 				C206278F17C59B4A001A581A /* CoreGraphics.framework in Frameworks */,
@@ -185,6 +191,8 @@
 		C206278917C59B4A001A581A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6DEB98B617C83CD200757E13 /* AudioToolbox.framework */,
+				6DEB98B417C83AFE00757E13 /* AVFoundation.framework */,
 				C206278A17C59B4A001A581A /* UIKit.framework */,
 				C206278C17C59B4A001A581A /* Foundation.framework */,
 				C206278E17C59B4A001A581A /* CoreGraphics.framework */,
