@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="11G63" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="2sR-2j-FJT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="2sR-2j-FJT">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
@@ -585,7 +585,6 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/TopViewController.h"/>
             <relationships>
                 <relationship kind="action" name="addTime:"/>
-                <relationship kind="action" name="back:" candidateClass="UIStoryboardSegue"/>
                 <relationship kind="action" name="desk:"/>
                 <relationship kind="action" name="minusTime:"/>
                 <relationship kind="action" name="munepoke:"/>
@@ -593,9 +592,6 @@
                 <relationship kind="outlet" name="munepokeButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="timerLabel" candidateClass="UILabel"/>
             </relationships>
-        </class>
-        <class className="UIStoryboardSegue" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UIStoryboardSegue.h"/>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
