@@ -51,7 +51,7 @@
     timeCount = 0;
 
     realTime = self.time;
-    realTime = 65;
+//    realTime = 65;
 
     _timeBarView.backgroundColor = [UIColor clearColor];
     //■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■　ここからゲームview
@@ -73,6 +73,9 @@
 {
     [super viewWillAppear:animated];
 
+    //文字色を黒色にする。
+    self.timeLabel.textColor = [UIColor blackColor];
+    
     timeMinute = (int) realTime / 60;
     timeSecond = (int) realTime - timeMinute * 60;
     self.timeLabel.text = [NSString stringWithFormat:@"%02d:%02d", timeMinute, timeSecond];
@@ -139,8 +142,10 @@
         if(realTime > 30.0f){
         if((int)realTime % 2 == 0)
         {
+                self.timeLabel.textColor = [UIColor blackColor];
                 self.view.backgroundColor = [UIColor yellowColor];
             }else{
+                self.timeLabel.textColor = [UIColor whiteColor];
                 self.view.backgroundColor = [UIColor blackColor];
             }
         }
@@ -172,6 +177,8 @@
 {
     realTime = self.time + 1;
     realTime = self.time;
+    //文字色を黒色にする。
+    self.timeLabel.textColor = [UIColor blackColor];
     //背景を白色に戻す
     self.view.backgroundColor = [UIColor whiteColor];
     //バーの状態を最初に戻す
@@ -250,6 +257,9 @@
         ((UILabel *)_questionLabels[i]).text = [NSString stringWithFormat:@"%d",arc4random() % 9 + 1];
     }
     
+    //文字色を黒色にする。
+    self.timeLabel.textColor = [UIColor blackColor];
+    
     self.secondGameView.alpha = 0.0;
     [UIView beginAnimations:nil context:nil];
     [UIView setAnimationDuration:1];
@@ -262,6 +272,9 @@
 {
     count = 0;
     judgeFlag = YES;
+    
+    //文字色を黒色にする。
+    self.timeLabel.textColor = [UIColor blackColor];
     self.secondGameView.alpha = 1.0;
     [UIView beginAnimations:nil context:nil];
     [UIView setAnimationDuration:0.5];

@@ -211,7 +211,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="LYx-gP-SYx">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="LYx-gP-SYx" userLabel="リセットボタン">
                                 <rect key="frame" x="78" y="278" width="165" height="165"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -565,35 +565,6 @@
         <image name="scene02_time.png" width="120" height="120"/>
         <image name="scene02_timebarSafe.png" width="460" height="120"/>
     </resources>
-    <classes>
-        <class className="TimerViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TimerViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="tapNumberButton:"/>
-                <relationship kind="action" name="wakeUp:"/>
-                <relationship kind="outlet" name="judgeTextLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="secondGameView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="timeBar" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="timeBarView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="timeLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="wakeButton" candidateClass="UIButton"/>
-                <relationship kind="outletCollection" name="answerLabels" candidateClass="UILabel"/>
-                <relationship kind="outletCollection" name="questionLabels" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="TopViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TopViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="addTime:"/>
-                <relationship kind="action" name="desk:"/>
-                <relationship kind="action" name="minusTime:"/>
-                <relationship kind="action" name="munepoke:"/>
-                <relationship kind="outlet" name="deskButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="munepokeButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="timerLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
