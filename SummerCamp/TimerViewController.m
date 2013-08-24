@@ -7,6 +7,9 @@
 //
 
 #import "TimerViewController.h"
+#import <AudioToolbox/AudioToolbox.h>
+#include <AVFoundation/AVFoundation.h>  
+
 
 @interface TimerViewController ()
 
@@ -14,9 +17,12 @@
 
 @implementation TimerViewController
 {
+    AVAudioPlayer *audioPlayer;
+
     int timeSecond;
     int timeMinute;
     NSTimer *tm;
+    NSTimer *soundTm;
     float realTime;
     
     //ゲームのクリックされた回数をカウントする。
@@ -45,7 +51,7 @@
     timeCount = 0;
 
     realTime = self.time;
-//    realTime = 70;
+    realTime = 70;
 
     _timeBarView.backgroundColor = [UIColor clearColor];
     //■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■　ここからゲームview
@@ -71,8 +77,6 @@
     timeSecond = (int) realTime - timeMinute * 60;
     self.timeLabel.text = [NSString stringWithFormat:@"%02d : %02d", timeMinute, timeSecond];
 
-    tm = [NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@selector(timerCountDown:) userInfo:nil repeats:YES];
-
 //    self.timeBar.frame = CGRectMake(74, 192, 230, 60);
 //    self.timeBar.frame = CGRectMake(74, 192, 230, 60);
 //    timeBarWidth = self.timeBar.frame.size.width;
@@ -81,7 +85,7 @@
     
     //timeBarのwidthをrealTimeの秒数で0pxに変更する。
     [UIView beginAnimations:nil context:nil];
-    [UIView setAnimationDuration:realTime];
+    [UIView setAnimationDuration:realTime -60];
     self.timeBar.frame = CGRectMake(57, 0, 0, 60);
     [UIView commitAnimations];
     
@@ -103,18 +107,33 @@
     timeSecond = (int) realTime - timeMinute * 60;
     self.timeLabel.text = [NSString stringWithFormat:@"%02d : %02d", timeMinute, timeSecond];
 
+    //アラームが修了したら実行
     if(realTime == 0.0f)
     {
         [tm invalidate];
-        realTime = self.time;
+        [self startSound];
+        soundTm = [NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@selector(soundTimerCountDown:) userInfo:nil repeats:YES];
+        
     }
 
 
+    if(realTime == 60.0f){
+        //timeBarのイメージをyellowに変更する。
+        //通常のバーに戻す
+        self.timeBar.frame = CGRectMake(57, 0, 230, 60);
+        self.timeBar.image = [UIImage imageNamed:@"scene02_timebarWarning.png"];
+        
+        //timeBarのwidthをrealTimeの秒数で0pxに変更する。
+        [UIView beginAnimations:nil context:nil];
+        [UIView setAnimationDuration:30];
+        self.timeBar.frame = CGRectMake(57, 0, 0, 60);
+        [UIView commitAnimations];
+    }
     //realTimeが残り60秒になったら（警告１）
     if(realTime < 60.0f && realTime > 30.0f)
     {
-        //timeBarのイメージをyellowに変更する。
-        self.timeBar.image = [UIImage imageNamed:@"scene02_timebarWarning.png"];
+
+        
         //画面をフラッシュさせる。
         if(realTime > 30.0f){
         if((int)realTime % 2 == 0)
@@ -127,7 +146,15 @@
     }
     //警告２
     if(realTime == 30.0f){
+        self.timeBar.frame = CGRectMake(57, 0, 230, 60);
         self.timeBar.image = [UIImage imageNamed:@"scene02_timebarOut.png"];
+        
+        //timeBarのwidthをrealTimeの秒数で0pxに変更する。
+        [UIView beginAnimations:nil context:nil];
+        [UIView setAnimationDuration:30];
+        self.timeBar.frame = CGRectMake(57, 0, 0, 60);
+        [UIView commitAnimations];
+        
         [self gameStart];
         self.view.backgroundColor = [UIColor whiteColor];
         [UIView beginAnimations:nil context:nil];
@@ -136,7 +163,7 @@
         [UIView commitAnimations];
     }
 
-    NSLog(@"%f",realTime);
+
 }
 
 - (IBAction)wakeUp:(id)sender
@@ -174,12 +201,21 @@
     //全ての項目が埋まったら実行
     if(count == 6)
     {
-        if(judgeFlag)
-        {
-            self.view.backgroundColor = [UIColor whiteColor];
-            [self gameEnd];
+        //タイマーを再セットする。
+        if(realTime == 0){
+            NSLog(@"スタート");
+            [soundTm invalidate];
             //■■■■■■■■■ 変数の値を警告の時間に変更する
             realTime = 70;
+            tm = [NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@selector(timerCountDown:) userInfo:nil repeats:YES];
+        }
+
+        if(judgeFlag)
+        {
+            realTime = 70;
+            self.view.backgroundColor = [UIColor whiteColor];
+            [self gameEnd];
+           
         }else{
             count = 0;
             judgeFlag = YES;
@@ -225,6 +261,7 @@
     self.timeBarView.frame = CGRectMake(17, 10, 287, 60);
     [UIView commitAnimations];
     
+    //通常のバーに戻す
     self.timeBar.frame = CGRectMake(57, 0, 230, 60);
     self.timeBar.image = [UIImage imageNamed:@"scene02_timebarSafe.png"];
     
@@ -236,6 +273,16 @@
     [UIView setAnimationDuration:realTime];
     self.timeBar.frame = CGRectMake(57, 0, 0, 60);
     [UIView commitAnimations];
+}
+- (void)soundTimerCountDown:(NSTimer *)timer
+{
+    AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
+}
+-(void)startSound{
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"mainSound" ofType:@"mp3"];
+    audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:path] error:nil];
+    audioPlayer.numberOfLoops = -1;
+    [audioPlayer play];
 }
 
 @end
